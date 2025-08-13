@@ -8,9 +8,6 @@ Training Script (trainQ.py) – Trains a TrOCR model on handwritten text data st
 Testing Script (testQ.py) – Runs inference on a single handwritten image to extract text.
 
 📂 Project Structure
-bash
-Copy
-Edit
 .
 ├── trainQ.py   # Script for training the model
 ├── testQ.py    # Script for testing the trained model
@@ -28,22 +25,15 @@ Easy Model Saving/Loading – Trained model and processor are stored for future 
 🛠 Installation
 Clone the repository:
 
-bash
-Copy
-Edit
 git clone https://github.com/yourusername/quantum-trocr.git
 cd quantum-trocr
 Install dependencies:
 
-bash
-Copy
-Edit
+
 pip install torch torchvision transformers pandas pillow tqdm
 (Optional) Install GPU support for PyTorch:
 
-bash
-Copy
-Edit
+
 pip install torch --index-url https://download.pytorch.org/whl/cu118
 📊 Training
 Prepare your dataset in Parquet format:
@@ -56,9 +46,7 @@ text (ground truth transcription)
 
 Run the training script:
 
-bash
-Copy
-Edit
+
 python trainQ.py
 Default model: microsoft/trocr-base-stage1
 
@@ -73,22 +61,16 @@ The directory where your model is saved
 
 Run:
 
-bash
-Copy
-Edit
+
 python testQ.py
 Example output:
 
-scss
-Copy
-Edit
 Predicted Text: hello world
 📦 Model Saving and Loading
 After training, the model and processor are saved to the specified directory:
 
 arduino
-Copy
-Edit
+
 trocr_handwritten_quantum_inspired/
 ├── config.json
 ├── pytorch_model.bin
@@ -101,9 +83,6 @@ The QuantumInspiredOptimizer modifies gradient updates by simulating momentum wi
 
 Update formula:
 
-ini
-Copy
-Edit
 exp_avg = β * exp_avg + (1 - β) * grad
 param   = param - lr * (1 + γ * step) * exp_avg
 📌 Requirements
